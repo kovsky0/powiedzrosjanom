@@ -9,8 +9,15 @@ export default function Footer() {
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             Chcesz się z nami skontaktować?
           </h3>
-          <p>Napisz na danielwyrzykowski@hey.com</p>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2"></div>
+          <p>Napisz na kontakt@powiedzrosjanom.pl</p>
+          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+            <a
+              href={`https://github.com/kovsky0/powiedzrosjanom`}
+              className="mx-3 font-bold hover:underline"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </Container>
     </footer>
