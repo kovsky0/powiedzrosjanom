@@ -7,7 +7,8 @@ import Layout from "../components/layout";
 import { getAllPostsForHome } from "../lib/api";
 import { CMS_NAME } from "../lib/constants";
 import PostBody from "../components/post-body";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 
 const BlockQuote = ({ children, preview }) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -40,6 +41,28 @@ const BlockQuote = ({ children, preview }) => {
 };
 
 export default function Index() {
+  useEffect(() => {
+    const initGA = () => {
+      ReactGA.initialize("UA-226023715-1");
+    };
+
+    const logPageView = () => {
+      ReactGA.set({ page: window.location.pathname });
+      ReactGA.pageview(window.location.pathname);
+    };
+
+    if (
+      process.env.NODE_ENV === "production" &&
+      typeof window !== "undefined"
+    ) {
+      if (!window.GA_INITIALIZED) {
+        initGA();
+        window.GA_INITIALIZED = true;
+      }
+      logPageView();
+    }
+  }, []);
+
   const botCode = `
   const delay = t => new Promise(resolve => setTimeout(resolve, t));
 
