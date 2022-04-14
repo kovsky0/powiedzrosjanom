@@ -105,7 +105,7 @@ export default function Index() {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with</title>
+          <title>PowiedzRosjanom.pl</title>
         </Head>
         <Container>
           <Intro />
