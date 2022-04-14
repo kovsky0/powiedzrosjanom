@@ -63,6 +63,10 @@
   @apply border-l-4 border-gray-500 bg-gray-200 italic ml-0 py-4 px-6;
 }
 
+.content blockquote + blockquote {
+  background-color: rgb(213, 220, 232);
+}
+
 .content blockquote p {
   @apply mt-0;
 }
